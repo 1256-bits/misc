@@ -1,0 +1,20 @@
+@use "colors.scss" as *;
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+}
+
+@each $name, $color in $colors {
+  @if ($name != "text") {
+    .bg-#{$name} {
+      background-color: var(--#{$name});
+    }
+  }
+  @if ($name != "background") {
+    .color-#{$name} {
+      background-color: var(--#{$name});
+    }
+  }
+}
